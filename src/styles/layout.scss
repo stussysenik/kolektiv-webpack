@@ -1,0 +1,124 @@
+/* *
+! Global styles
+**/
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/src/Poppin/Poppins-Light.woff2') format('woff2'),
+    url('/src/Poppin/Poppins-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Poppins';
+}
+
+/* *
+! Index.html
+**/
+
+$mainLogoHeight: 18%;
+$mainLogoWidth: 13%;
+
+.parent {
+  position: relative;
+  height: 0;
+  padding-bottom: 46.25%;
+}
+
+.child {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-logo {
+  width: $mainLogoWidth;
+  height: $mainLogoHeight;
+  position: absolute;
+  left: 5%;
+}
+
+@mixin iconDefault($iconSize, $top) {
+  position: absolute;
+  top: $top;
+  width: $iconSize;
+  height: $iconSize;
+  filter: invert(100%);
+}
+
+$initialIndentForIcons: 60%;
+$multiplierForIcons: 5%;
+
+.icons {
+  @include iconDefault(4.5%, 7%);
+}
+
+@for $i from 1 through 4 {
+  .icon-#{$i} {
+    left: $initialIndentForIcons + ($multiplierForIcons * $i);
+  }
+}
+
+.menu {
+  left: $initialIndentForIcons + 30%;
+}
+
+.icons {
+  transition: .5s ease;
+}
+
+.icons:hover {
+  box-shadow:
+    1px 1px #373737,
+    2px 2px #373737,
+    3px 3px #373737,
+    4px 4px #373737,
+    5px 5px #373737,
+    6px 6px #373737;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+  transition: .5s ease;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .main-logo {
+    width: 32%;
+    height: 42%;
+    top: 15%;
+  }
+
+  .icons {
+    @include iconDefault(10%, 30%);
+  }
+
+  .icon-1 {
+    left: 42%
+  }
+
+  .icon-2 {
+    left: 52%
+  }
+
+  .icon-3 {
+    left: 63%
+  }
+
+  .icon-4 {
+    left: 74%
+  }
+
+  .menu {
+    left: 88%;
+  }
+}
+
+/* *
+! Index.html
+* dfadfs
+TODO: AFSDAS
+? DFASA
+**/
